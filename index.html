@@ -165,7 +165,7 @@
     <!-- Login screen -->
     <div id="loginScreen" class="screen active">
         <div style="margin-top: 40px; text-align: center;">
-            <h3>Bienvenido a MyChat</h3>
+            <h3>Bienvenido a ChatApp</h3>
             <p>Inicia sesión o regístrate</p>
         </div>
         <div class="input-group"><input type="email" id="loginEmail" placeholder="Email" /></div>
@@ -440,6 +440,10 @@
                 currentUser = null;
                 showScreen('login');
                 headerTitle.innerText = 'MyChat';
+                // Limpiar campos de login
+                document.getElementById('loginEmail').value = '';
+                document.getElementById('loginPassword').value = '';
+                document.getElementById('loginError').innerText = '';
                 // Limpiar listeners y mapa
                 if (messagesRef) {
                     if (messagesCallback) messagesRef.off('value', messagesCallback);
