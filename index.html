@@ -144,11 +144,11 @@
 <div id="app">
     <div id="loadingOverlay" class="hidden">
         <div class="spinner"></div>
-        <div>Cargando MyChat...</div>
+        <div>Cargando ChatApp...</div>
     </div>
 
     <header>
-        <h2 id="headerTitle">MyChat</h2>
+        <h2 id="headerTitle">ChatApp</h2>
         <div class="header-buttons">
             <button class="zoom-btn" id="zoomOut" title="Reducir tamaño">A−</button>
             <button class="zoom-btn" id="zoomIn" title="Aumentar tamaño">A+</button>
@@ -429,7 +429,7 @@
                     await ensureUserInDatabase();
                     showScreen('users');
                     loadUsersList(); // También actualiza usersMap
-                    headerTitle.innerText = `MyChat - ${user.displayName || user.email}`;
+                    headerTitle.innerText = `ChatApp - ${user.displayName || user.email}`;
                 } catch (e) {
                     console.error('Error en auth state:', e);
                     alert('Error al cargar usuario');
@@ -439,7 +439,7 @@
             } else {
                 currentUser = null;
                 showScreen('login');
-                headerTitle.innerText = 'MyChat';
+                headerTitle.innerText = 'ChatApp';
                 // Limpiar campos de login
                 document.getElementById('loginEmail').value = '';
                 document.getElementById('loginPassword').value = '';
@@ -727,7 +727,7 @@
 
         document.getElementById('backFromProfile').addEventListener('click', () => {
             showScreen('users');
-            headerTitle.innerText = `MyChat - ${currentUser?.displayName || currentUser?.email || ''}`;
+            headerTitle.innerText = `ChatApp - ${currentUser?.displayName || currentUser?.email || ''}`;
         });
 
         document.getElementById('updateNameBtn').addEventListener('click', async () => {
